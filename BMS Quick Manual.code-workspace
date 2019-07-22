@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "FalconBMS Quick Manual",
+			"path": "."
+		}
+	],
+	"settings": {
+		"markdown-pdf.width": "960px",
+		"markdown-pdf.height": "1280px",
+		"markdown-pdf.orientation": "landscape",
+		"markdown-pdf.margin.top": "64px",
+		"markdown-pdf.margin.bottom": "64px",
+		"markdown-pdf.displayHeaderFooter": true,
+		"markdown-pdf.headerTemplate": "<div style=\"position: relative; border-top: 1px solid black; margin: 0.5cm; font-size: 9px; width: 100%;\"><div style=\"position: absolute; width: 100%; top: 0.2cm; text-align: center;\"></div></div>",
+		"markdown-pdf.footerTemplate": "<div style=\"position: relative; border-top: 1px solid black; margin: 0.5cm; font-size: 9px; width: 100%;\"><div style=\"position: absolute; width: 100%; top: 0.2cm; text-align: center;\"><span class='pageNumber'></span> / <span class='totalPages'></span></div><div style=\"position: absolute; right: 0; top: 0.2cm;\">FalconBMS Quick Manual.</div></div>"
+	}
+}
