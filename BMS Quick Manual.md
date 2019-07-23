@@ -307,9 +307,9 @@ In that case, connect F16 MFD 1 again and restart BMS.
 
 ### Axis gone
 
-The axis settings of BMS will automatically disappear unless you have the same DX device environment(same devices connected, nor more or less) as when you saved it.
+The axis settings of BMS will automatically disappear unless you have the same DX device environment(same devices connected, no more nor less) as when you setup it last time.
 
-If you want to add a new DX device, you need to reconfigure axis, also remove them when starting BMS if it is a device you don't use to play BMS but you are just connecting.
+If you want to add a new DX device, you need to reconfigure axis, also remove them before start setup if there are any devices you don't use to play BMS but you are just connecting.
 
 Even if you accidentally start Falcon in a different device environment, just quit Falcon without saving the settings, restore the device environment as same as you launched BMS last time, then reboot BMS will restore the previous settings.
 
