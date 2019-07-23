@@ -255,6 +255,10 @@ Find out the section and assign each HOTAS switch to your joystick button.
 
 once you done the key assignment, click `ADVANCED` tab and assign axis from the new window.
 
+Falcon BMS builds in the input curves of the actual F-16 FLCS.
+
+Therefore, Benchmark sims recommends that the pitch / roll axis of the joystick set to OFF the dead zone and curves.
+
 ## Recomended Joysticks
 
 - **HOTAS Warthog (+ FSSB R3)** or **HOTAS Cougar**
@@ -279,9 +283,78 @@ once you done the key assignment, click `ADVANCED` tab and assign axis from the 
 
 <div style="page-break-before:always"></div>
 
-## Pinky Shift
+## Why did my joystick setup gone/mixed up?
 
+### DX setup mixed up
 
+The ID number of the connected device is saved in `DeviceSorting.txt` in the `FalconBMS4.34\User\Config` directory.
 
+When BMS recognizes a new device, the device GUID and name are written in the file.
 
+For example
+```
+{B351044F-0000-0000-0000-504944564944} "F16 MFD 1"
+{B352044F-0000-0000-0000-504944564944} "F16 MFD 2"
+{0400044F-0000-0000-0000-504944564944} "Thrustmaster HOTAS Cougar"
+```
+
+In the example above, DX button 0-31 is assigned to F16 MFD 1, 32-63 for F16 MFD 2, and 64-95 for Thrustmaster HOTAS Cougar.
+
+If you forget to connect F16 MFD 1 and start BMS, F16 MFD 2 will be assigned the 0-31 DX button, and the order of the DX buttons on Thrustmaster HOTAS Cougar will be 32-63.
+But you were assigning HOTAS callbacks to DX 64-95, therefore your joystick does not work as HOTAS anymore.
+
+In that case, connect F16 MFD 1 again and restart BMS.
+
+### Axis gone
+
+The axis settings of BMS will automatically disappear unless you have the same DX device environment(same devices connected, nor more or less) as when you saved it.
+
+If you want to add a new DX device, you need to reconfigure axis, also remove them when starting BMS if it is a device you don't use to play BMS but you are just connecting.
+
+Even if you accidentally start Falcon in a different device environment, just quit Falcon without saving the settings, restore the device environment as same as you launched BMS last time, then reboot BMS will restore the previous settings.
+
+## Modifier
+
+The key assigned to **"STICK: PINKY SWITCH (DX SHIFT)"** (the callback name in the configuration file is SimHotasPinkyShift) will function as a normal pinkey when pressed short, and as a DX button shift key (same to "modifier" in DCS) when pressed hold.
+
+While shifting the DX button, the DX button of each joystick switch will be recognized as the original DX number + 256th switch.
+
+"STICK: PINKY SWITCH" (callback name in the configuration file is SimPinkySwitch) functions only as a normal pin key switch and does not have the shift function of the DX button.
+
+If you change the value of `g_nHotasPinkyShiftMagnitude` from `falcon bms.cfg` in the `User\ Config` directory, the value of the DX button shifting number will be reflected (the default is 256).
+
+You have to Edit `.key` file in `User/Config` folder manually to assign shifted DX key.
+
+For example:
+
+```
+SimTriggerFirstDetent 0 -1 -2 0 0x0 0
+SimPickle 256 -1 -2 0 0x0 0
+SimHotasPinkyShift 2 -1 -2 0 0x0 0
+```
+
+In the example above, the first stage of the trigger is assigned to DX number 0, and the pickle is assigned to DX number 256.
+
+While pressing the pinkey assigned to DX No. 2, pulling the trigger to the first step works the same as pressing the pickle switch.
+
+**If you execute the DX shift, if you release the PINKEY switch after pressing the shift switch and then release the finger, all switches will remain shifted.**
+
+To avoid this, you need to assign a second SimHotasPinkyShift callback to the DX shift destination as well.
+
+For example:
+
+```
+SimTriggerFirstDetent 0 -1 -2 0 0x0 0
+SimPickle 256 -1 -2 0 0x0 0
+SimHotasPinkyShift 2 -1 -2 0 0x0 0
+SimHotasPinkyShift 258 -1 -2 0 0x0 0
+```
+
+This will avoid shifted remain glitch. It's useful but not written in the official manual.
+
+## I don't have a rudder pedals
+
+You can enable Enable `Roll-linked NWS` option on the `VIEW CONTROL` tab of the `ADVANCED` setting screen. Enabling the option allows you to steer the wheel on the roll axis while turning NWS on the ground.
+
+If any axis is assigned to the ladder, the option will be invalidated even if it is checked.
 
