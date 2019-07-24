@@ -18,7 +18,11 @@ BenchmarkSims is the only survivor of such a volunteer development team, and dev
 
 # What is Dynamic Campaign
 
-[WIP]
+Falcon 4.0 is like a flight simulator that can operate a fighter as a part of a strategy simulation game.
+
+In Dynamic Campaign, every country of every coalitions, all forces, ground, sea, air, fight against each other. Missions will be automatically generated and fragged by HeadQuater AI, and each AI pilot joins there flight. You can take a sheet for those generated mission, and fly with them, or fly with your human friend. Or you can plan your own mission. You can debate and plan a mission with your mate in MP too. Every mission will be unique as they are not scripted but a result of entire war simulation, and affects entire situation, thus future missions.
+
+Keep in mind there is a logistics, don't get your ammunition storage bombed or you will be run out of missiles.
 
 <div style="page-break-before:always"></div>
 
@@ -26,70 +30,14 @@ BenchmarkSims is the only survivor of such a volunteer development team, and dev
 
 ## Flight Model
 
-- Performance: see HFFM manual
-95% performance accuracy on the whole flight envelope:
-- Turn Rate
-- Turn Radius
-- Energy Management
-- Accel and Decel Performances
-- Climb performances
-- Drag indexes complex modeling
-- Handling
-- Real FLCS build in, including AutoPilot and TFR Tie In.
-- Real stick responses curves built in
-- Cruise gains, Landing Gains, Stand By gains, MPO
-- Accurate aerodynamic departures: Roll , Pitch and yaw departures
-- Aerodynamic modeling
-- Complex aerodynamic coupling modeling: 30 couplings modeled
-- Independent LEF and TEF model
-- Ram drag model
-- Buffeting model
-- Flutter model
-- Convective and mechanical turbulences
-- Background Noise turbulences
-- Jet Wash
-- Wind Gusts
-- Wind Aloft
-- Mechanical Components
-- Real time Gravity center management, (lateral and longitudinal), including fuel and weapons
-- Real Time inertia matrix management, including fuel and weapons
-- Fuel System: 7 tanks modeled with accurate pump system and transfer rates
-- External tanks with 3 compartments model
-- Trap fuel model
-- Starve out model
-- Complex gear modeling:
-  - Stiffness
-  - amortization
-  - pre stressing
-  - tire elasticity
-- Brake temperature modeling
-- Wing Flex: interacting with fuel, weapons and accelerations
-- Canon recoil model
-- FLCS Bit
+BMS coded a completely new flight model which do a calculation outside of legacy Falcon4.0 code but import position updates.
+> I think that trying to plug new lines in the existing code could have been a wrong choice, therefore I decided to start from a blank page and use a dedicated data file format. The idea at this stage was to develop a new FM code that can be completely autonomous from F4. Then the new code would be fed values coming from F4 (atmosphere, terrain, weapons, fuel, etc) and would export output values into the F4 code (world positions, speeds, angles, etc).
 
-## Engine Modeling
+You can read articles about BMS FM at official website
+[FLIGHT MODEL](https://www.benchmarksims.org/forum/content.php?45-documentation)
 
-- DEEC and SEC modelwith accurate RPM / NOZZLE / FTIT andspooling times
-- Oil pressure / quantity model
-- EPU model
-- Hydraulic pressure model
-- JFS fuel and heating model
-- Accurate Fuel Flows in the whole flight envelope
-- Realistic Engine faults: Hung starts / Hot starts / oilpressure default
-- Realistic Air Start model
-
-## Damage Modeling
-
-- Airframe damage model impacting performances andhandling
-  - Engine inlet
-  - Engine outlet
-  - L/R wings
-  - L/R elevators
-  - Rudder / Tail
-- Oil Leaks
-- Fuel Leaks
-- Hydraulics leaks
-- FLCS faults
+also check Mav-JP's description
+[BMS : F16 FLIGHT MODELING](https://www.reddit.com/r/falconbms/comments/bptu8e/bms_f16_flight_modeling/)
 
 ## AI
 
@@ -259,6 +207,10 @@ Falcon BMS builds in the input curves of the actual F-16 FLCS.
 
 Therefore, Benchmark sims recommends that the pitch / roll axis of the joystick set to OFF the dead zone and curves.
 
+## I can't assign POV hat of the throttle
+
+BMS only recognize POV hats of the primary device, sorry.
+
 ## Recomended Joysticks
 
 - **HOTAS Warthog (+ FSSB R3)** or **HOTAS Cougar**
@@ -356,5 +308,5 @@ This will avoid shifted remain glitch. It's useful but not written in the offici
 
 You can enable Enable `Roll-linked NWS` option on the `VIEW CONTROL` tab of the `ADVANCED` setting screen. Enabling the option allows you to steer the wheel on the roll axis while turning NWS on the ground.
 
-If any axis is assigned to the ladder, the option will be invalidated even if it is checked.
+If any axis is assigned to the rudder, the option will be invalidated even if it is checked.
 
