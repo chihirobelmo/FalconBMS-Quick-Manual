@@ -138,7 +138,7 @@ The registry will be at `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Benchmark Sims\
 
 You can start BMS via stock launcher or you can install [Alternative Launcher](https://github.com/chihirobelmo/FalconBMS-Alternative-Launcher)
 
-Falcon BMS Alternative Launcher is a replacement for stock BMS launcher including key/axis mapping feature. It can configure and save BMS SETUP per Joysticks. When you launch BMS through this app, it auto-generates proper setup files and overwrites them for current device order before BMS find them changed and initialize your setup. You don't have to worry about SETUP mixing up DX order nor resets axis setups even if device sort or numbers have been changed.
+Falcon BMS Alternative Launcher is a replacement for stock BMS launcher including key/axis mapping feature. It can configure and save BMS SETUP per Joysticks. When you launch BMS through this app, it auto-generates proper setup files and overwrites them for current device order. You don't have to worry about SETUP mixing up DX order nor resets axis setups even if device sort or numbers have been changed.
 
 However, this chapter will describe how to setup BMS with the stock launcher.
 
@@ -310,3 +310,49 @@ You can enable Enable `Roll-linked NWS` option on the `VIEW CONTROL` tab of the 
 
 If any axis is assigned to the rudder, the option will be invalidated even if it is checked.
 
+# Start Training Missions
+
+BMS has training missions to learn the operation of F-16.
+How to fly those missions is described in the **"Docs/BMS-Training.pdf"** in the BMS install directory.
+
+To start a training mission, select `TACTICAL ENGAGEMENT` from the menu and select the `TRAINING` tab.
+
+After selecting the mission you want to fly from the list, confirm the mission contents and `COMMIT`.
+
+After entering the mission planning screen. Select the flight you want to fly from the `MISSIONS` list and then select which aircraft in the flight you want to board. Click the airplane icon to select a boarding aircraft. If your name appears below the icon, you are registered as a boarding aircraft.
+
+The top icon is the captain and the next icon is the wingman.
+
+# Start Campaign
+
+## Select Campaign and Fighter Squardron
+
+Start the campaign from the menu `CAMPAIGN`.
+
+- select `NEW` tab if you want to play a new campaign
+- `SAVED` if you want to start from save data
+- `ONLINE` to participate in multiplayer
+
+If you select `NEW`, then select the campaign to play from now on.
+
+Each theater has up to six campaigns, and the start situation and victory conditions differ depending on the campaign.
+
+After selecting a campaign, select the deployed base from the map. then, select a unit from the units deployed to the selected base. The selected unit's information will be displayed at the bottom left of the screen.
+
+## Start A Mission
+
+Once you have launched the campaign, select the mission you would like to join from `FRAG OREDER`.
+
+Once you have selected a mission, board one of the aircraft in the flight. Click the airplane icon to select a boarding aircraft. If your name appears below the icon, you are registered as a boarding aircraft. The top icon is the captain and the next icon is the wing.
+
+On the map screen, you can check the current time with the clock at the top right of the screen, and you can speed up the time forward up to 64x.
+
+After registering the boarding to the aircraft, check the `BRIEFING`, change the arming with `LOADOUT` if necessary, adjust and confirm the mission with the map screen, and then start the mission with `TAKEOFF`.
+
+After choosing `TAKEOFF` before the flight's takeoff time, you can choose how to start the mission.
+
+- If you choose `Ramp`, the mission will start from the condition before the engine start 20 minutes before the takeoff time.  
+- If you select `Taxiway`, the mission will start from the taxiway 4 minutes before the takeoff time.  
+- If you choose `Runway`, the mission will start from the runway one minute before the start of takeoff.
+
+If `TAKEOFF` is selected from the flight takeoff time before the aircraft reaches the IP on the map, the mission would start from the air.
