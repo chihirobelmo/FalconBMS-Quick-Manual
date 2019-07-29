@@ -356,3 +356,71 @@ After choosing `TAKEOFF` before the flight's takeoff time, you can choose how to
 - If you choose `Runway`, the mission will start from the runway one minute before the start of takeoff.
 
 If `TAKEOFF` is selected from the flight takeoff time before the aircraft reaches the IP on the map, the mission would start from the air.
+
+# Plan A Mission
+
+The flight plan course is represented by white circles(Steerpoint), squares(IP), triangles(EOR) and the lines connecting them.
+
+Each steer point can be repositioned by drag and drop, and the arrival time of each point, flight altitude, passing speed, action to be performed, etc. can be set from the PKG window displayed by double clicking a steerpoint circle (or click the flight plan icon below).
+
+When the flight plan is represented by a red line and a marker, it means that the setting of arrival time (TOS) or passing speed (CAS) of the point is unreasonable. In that case, open the PKG window and adjust again.
+
+You can lock the TOS, CAS, or both by clicking on the lock symbol. Changing the locked TOS or CAS will automatically adjust the unlocked TOS / CAS of all steer points. Unlocking the TOS of all steer points, locking and adjusting the CAS makes it easy to modify the flight plan.
+
+# Data cartridge settings
+
+You can access the data cartridge settings from the DTC icon on the map screen.
+
+The data cartridge is magnetic tape recording mission information, and it is inserted into a designated slot in the F-16 cockpit and data is read before flight.
+
+The data cartridge contains data sets for radio frequency presets, initial settings for the MFD screen in each flight mode, preset settings for the self-defense program (chaff / flare emission pattern), target coordinates, steer point information, IFF.
+
+Befoe starting a mission, open the Data Cartridge window from the DTC icon, select the COMMS tab, select UHF No. 15, press SET TOWER to register the tower frequency of the base you are belonging to. When DEFAULT is checked, the initial setting of the radio after avionics activation will be the preset number selected by DTC.
+
+# Set steerpoint to a target cordinations
+
+It is important to check the location of the target and its surroundings before the start of the mission. Open the right-click menu on any unit or point on the MAP, select Recon, and check the surroundings in the 3D screen.
+
+When the Recon screen opens, select the target you want to attack from TARGET LIST, set the desired steer point number (ie: target steerpoint represented by the triangle) from DESIGNATE AS TGT STPT # in the RECON window and press ACCEPT to overwrite the steer point coordinates with the target coordinates.
+
+After performing ACCEPT on the RECON screen, select the Data Cartridge window, confirm that the target coordinates have been overwritten to the specified steerpoint number from the TARGET tab, and then save. If this is not done, the information will not be registered in DTC properly.
+
+# Preplanned Threat Steerpoint
+
+Before the flight, confirm the presence of threats around the flight plan course (such as enemy air defence battalion units), and register the preplanned threat steer points to display the location and range of threats on the MFD HSD screen.
+
+Open the right-click menu on the map to display Battalions from Ground Units and check Air Defense. You will now see your enemy's air defense battalion on the map. Right-click on the symbol representing a air defense battalion unit on the map and press Status to see the unit's formation.
+
+Once you have identified the threat type, right-click on the map and select Set Preplanned Threat Stpt from the menu to add a green threat marker to the map. Drag and drop this threat marker onto the air defense sbatallion unit, and left-click to select the threat type from the setting window that appears, then press ACCEPT. This will allow threat markers to display the effective range as a circle. To delete a threat marker, open the right-click menu on the marker and delete it.
+
+Please note that changes will not be reflected unless you open the Data Cartridge window and press SAVE after adding or deleting threat markers.
+
+# Create a mission yourself
+
+## Disable automatic generation of missions
+
+If you create missions yourself, you may not be able to create new missions if a certain number of aircrafts are assigned by auto-generated missions. If you turn off automatic generation of missions in advance, it will be easier to create missions.
+
+To disable the automatic generation of missions, click the Maximize icon on the map screen, select the Squardron Records icon, and uncheck Set by HQ from the FIGHTER SQUARDRON window.
+
+## Create a Package
+
+When creating a package, first determine the unit or airspace you want to target.
+
+This time, I will create a DEAD mission package that will destroy enemy air defense battalion units as an example. If you want to create a mission to patrol a particular airspace, do the same for the airspace.
+
+Switch to the unit display in Battalions units from the right click menu on the map this time to check the Air Defense unit.
+
+Right-click the displayed unit and confirm the unit name from Status. Right-click the unit again and select Add Package.
+
+When the ADD PACKAGE window is displayed, lock the takeoff time (TAKEOFF) of the package or lock the estimated time of arrival at the target (TIME ON TARGET) and press NEW.
+
+When the ADD FLIGHT window appears, select the aircraft owned by your unit from AIRCRAFT. After selecting your base in AIR BASE, select your unit from SQUARDRON. Select the target unit's unit name from TARGET, set the mission content to DEAD from ROLE, and determine the number of flights from SIZE. Press OK to create the flight in the package.
+
+To add a new flight to the package, set the takeoff time or arrival time again and press NEW. This time, we will add an ESCORT flight. After setting ROLE to ESCORT, set TARGET to the callsign of the flight to be escorted.
+
+Although Escort flights are organized from the same base and the same stage in the example in the figure, flights may be created in the same way from other units on other bases.
+
+If you confirm the created package, press OK.
+
+If you want to add a new flight to the package created once, select the created flight from the FRAG ORDER list, double-click the flight plan and identify the package number from the name of the PKG window that appears, and click the ATO icon to show it AIR TASKING Activate Show All Packages from the ORDER window, search for the package number with the same name, select Show Flights from the package right-click menu, and the Add Package window will be displayed again.
