@@ -2,7 +2,7 @@
 
 |Version|Date|
 |-|-|
-|v0.01|2019.07.20|
+|v0.02|2019.8.1|
 
 # What is FalconBMS
 
@@ -424,3 +424,82 @@ Although Escort flights are organized from the same base and the same stage in t
 If you confirm the created package, press OK.
 
 If you want to add a new flight to the package created once, select the created flight from the FRAG ORDER list, double-click the flight plan and identify the package number from the name of the PKG window that appears, and click the ATO icon to show it AIR TASKING Activate Show All Packages from the ORDER window, search for the package number with the same name, select Show Flights from the package right-click menu, and the Add Package window will be displayed again.
+
+# Multiplayer
+
+In BMS, you need to set port forwarding and firewall exceptions and bandwidth correctly, and if the client does not know some rules, it will make the server unstable.
+
+BMS also an in-game voice chat called Internal Voice Communications (IVC), which enables voice chat in conjunction with the in-game cockpit radio settings. The use of the IVC makes it possible to reproduce more realistic flight operations.
+
+## Port forwarding and firewall exception settings
+
+The following ranges of ports need to be opened before hosting the BMS server:
+
+- The BMS server host: UDP 2934-2935.
+- The IVC server host: UDP 9987-9989.
+
+You can also set up a DMZ (take on your own security issues).
+
+# Host a server / connect as a client
+
+Check the upload speed on [SPEEDTEST.NET](https://www.speedtest.net/) when hosting/connecting to a server. Make a note of the upload and download speeds in kbps. This value will be used later for band setting.
+
+Before launching BMS, launch the IVC Server from the launcher if using IVC. The host of the IVC server can be same PC to the BMS host, ot may be on a separate PC from the BMS host.
+
+After starting BMS, select COMMS from the top menu, and set the opened COMMS window as follows.
+
+If you are hosting a server for the first time, you may want to create a new server list with NEW and then start the configuration.
+
+- ServerName:  
+Set any name you want.
+
+- Connect to IP Address:  
+0.0.0.0 when setting up a server as a host, or set the host IP address when connecting to a server as a client.
+
+- Upload Bandwidth:  
+Enter 90% of the upload speed value checked by SPEEDTEST.NET in kbps. For example, for an upload speed of 50 MB, enter 45000.
+
+- Download Bandwidth:  
+  Enter 90% of the download speed found in SPEEDTEST.NET in kbps. For example, for an upload speed of 50 MB, enter 45000.
+
+If you want to host/join an IVC server, make the following settings.
+
+- IVC Enabled: Check
+
+- Dedicated IVC Server: 127.0.0.1 when you host an IVC server  
+(If another machine hosts IVC server, enter the IPv4 address of the IVC host)
+
+- Dedicated IVC Password:
+Enter the password, leave blank if you do not want to set the path.
+
+If this is your first setup, you may want to save these settings by selecting SAVE before opening the server. Also, when connecting to the server as a client for the first time, it is better to save the server information with the SAVE button.
+
+The saved server list is written to User/Config/phonebkn.ini in text file format.
+
+Select CONNECT when you are done.
+
+When the server host or client connection is successful, COMMS on the menu screen blinks.
+
+Clicking on the COMMS menu will display a list of connected clients.
+
+To start a session, the host has to load or start a new game mode: Dogfight, Tactical Engagement, or Campaign.
+
+After selecting TE, new campaign or saved data to load, click COMMIT ONLINE and the RULES OF ENGAGEMENT window will be displayed.
+
+
+The server host can now define room rules when starting a session.
+
+- GAME NAME:  
+Set the session name displayed on the ONLINE tab of each mode.
+
+- PASSWORD:  
+You can add a password to the session. or Leave blank.
+
+- MAX # PLAYERS:  
+Set the maximum number of people who can connect at the same time.
+
+If you are a client and want to join the session, select the game mode in which the host started: Dogfight, Tactical Engagement, or Campaign. After selecting the game mode, find the session started by the host from the ONLINE tab and click it.
+
+If you select COMMIT ONLINE, the RULES OF ENGAGEMENT window will be displayed.
+
+Clients must now configure their settings to the host's defined room rules before joining the session. The list on the left are the server rules, and the right is your current settings. Let's COMPLY if the setting conforms to the server specification.
